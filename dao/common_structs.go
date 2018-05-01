@@ -67,5 +67,7 @@ func GetSessionDetails(token string) UserCredentials {
 func StoreSurveyData(s Survey) string {
 	session := MgoSession.Clone()
 	defer session.Close()
+	surveyClctn := session.DB("simplesurveys").C("survey")
 
+	return "ok"
 }
