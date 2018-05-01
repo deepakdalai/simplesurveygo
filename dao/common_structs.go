@@ -1,6 +1,8 @@
 package dao
 
 import (
+	"time"
+
 	uuid "github.com/satori/go.uuid"
 	"gopkg.in/mgo.v2/bson"
 )
@@ -14,6 +16,13 @@ type UserCredentials struct {
 type Session struct {
 	Username string `json:"username"`
 	Token    string `json:"token"`
+}
+
+type Survey struct {
+	Name      string    `json:"name"`
+	Birthdate time.Time `json:"birthdate"`
+	Color     string    `json:"color"`
+	Email     string    `json:"email"`
 }
 
 func AuthenticateUser(cred UserCredentials) string {
@@ -53,4 +62,10 @@ func GetSessionDetails(token string) UserCredentials {
 	query = clctn.Find(bson.M{"username": response.Username})
 	err = query.One(&cred)
 	return cred
+}
+
+func StoreSurveyData(s Survey) string {
+	session := MgoSession.Clone()
+	defer session.Close()
+
 }
