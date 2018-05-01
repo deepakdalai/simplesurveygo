@@ -1,48 +1,55 @@
+<!DOCTYPE html>
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <head>
+        <title>Single line text - Text question, jQuery Survey Library Example</title>
+        <script src="https://unpkg.com/jquery"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
   <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
   <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-</head>
-
-<style>
-      .panel > .panel-heading {
-          background-image: none;
-          background-color: #006666;
-          color: white;
-          border: 1px solid #006666; 
-      }
-
-      .panel {
-          border: 1px solid #006666;
-      }
-</style>
-
-<body>
-    <div ng-app="myApp" ng-controller="myCtrl" style="margin-left:10%;margin-right:10%;margin-top:50px;width:80%" >
+        <script src="https://surveyjs.azureedge.net/1.0.20/survey.jquery.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+       
+        <style>
+         
+.btn-green {
+    background-color: #1ab394;
+    color: #fff;
+    border-radius: 3px;
+}
+.btn-green:focus,
+.btn-green:hover {
+    background-color: #18a689;
+    color: #fff;
+}
+.panel-footer {
+    padding: 0 15px;
+    border: none;
+    text-align: right;
+    background-color: #fff;
+}
+        </style>
+    </head>
+    <body> 
+        <div ng-app="myApp" ng-controller="myCtrl" style="margin-left:10%;margin-right:10%;margin-top:50px;width:80%" >
 
         <h1 style="text-align:center;font-size:450%;font-family:'Times New Roman'" >Survey Service</h1>
         <br>
         <br>
 
-        <h1 style="text-align:center;font-size:250%;font-family:'Times New Roman'" >Survey list</h1>
-        
-
-                
+        <h1 style="text-align:center;font-size:250%;font-family:'Times New Roman'" >Survey list</h1>         
 
     </div>
-</body>
+        <div id="surveyElement"></div>
+        <div id="surveyResult"></div>
 
+        <script type="text/javascript" src="./a.js"></script>
 
+    </body>
 <script>
     var app = angular.module('myApp', ['ui.bootstrap']);
     app.controller('myCtrl', function($scope, $http, $timeout, $interval, $q) {
@@ -51,5 +58,4 @@
 
     })
 </script>
-
 </html>
